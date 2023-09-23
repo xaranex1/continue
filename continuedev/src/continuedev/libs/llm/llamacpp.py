@@ -75,7 +75,7 @@ class LlamaCpp(LLM):
                 timeout=aiohttp.ClientTimeout(total=self.timeout),
             ) as client_session:
                 async with client_session.post(
-                    f"{self.server_url}/completion",
+                    f"{self.server_url}/completions",
                     json={"prompt": prompt, "stream": True, **args},
                     headers=headers,
                 ) as resp:
